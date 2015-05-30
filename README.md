@@ -7,19 +7,19 @@ It is an seed project for AngularJS web application which objects is:
 
 ## Installation
 
-1. Create a new folder for project, and clone this repo inside it
+1) Create a new folder for project, and clone this repo inside it
 ```
 git clone https://github.com/SidKH/angular-starter-kit.git ./
 ```
-2. Install all npm and bower dependencies
+2) Install all npm and bower dependencies
 ```
 npm install
 ```
-3. Install gulp if you don't have it already.
+3) Install gulp if you don't have it already.
 ```
 npm install --global gulp
 ```
-4. Run gulp
+4) Run gulp
 ```
 gulp
 ```
@@ -65,4 +65,14 @@ app/
   app.modules.js            // Basic angular application settings
   app.routes.js             // Angular routing
   app.queries.js            // Angular service which contains all $resource objects of the application
+```
+
+## Server Folder Structure
+```
+data/         // Folder with mockup json data for server api
+  test.json     // Mockup json file whic will be returned to the client by server api
+libs/         // Folder with server libs
+  loader.js     // Json files loader
+routes.js     // Server routes
+server.js     // Main server file which create and setup express application
 ```
