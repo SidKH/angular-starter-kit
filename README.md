@@ -61,7 +61,7 @@ app/
   shared/                   // Angular components shared through application (like header, sidebar, etc..)
     header/                   // Folder for shared module
       header-directive.js       // Directive for shared module
-      header-ivew.html          // View for shared module
+      header-view.html          // View for shared module
       index.js                  // Angular module which contains all shared modules
     index.js                  // Angular module which contains all shared modules
   app.modules.js            // Basic angular application settings
