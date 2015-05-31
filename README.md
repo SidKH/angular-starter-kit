@@ -13,11 +13,8 @@ git clone --depth=1 https://github.com/SidKH/angular-starter-kit.git ./
 ```
 2) Add your own repository
 ```
-rm -rf .git
-git init
+rm -rf .git && git init && git add . && git commit -m "Init AngularJS Starter Kit"
 git remote add origin your_repository_here
-git add .
-git commit -m "Init AngularJS Starter Kit"
 git push origin master
 ```
 3) Install all npm and bower dependencies
