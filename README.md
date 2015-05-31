@@ -94,7 +94,7 @@ The main point here is using modular structure so later you can just delete the 
 For styling you must use scss. The main entry for all your styles is `client/main.scss`, you can include in it all partials scss from your application. You must have two kinds of partial scss files.  
 First from `client/styles` folder - it'll contain scss partials with global styles for your app (settings, variables, mixins, forms, buttons, etc.).  
 And the second one - module partials: partials from different modules of your application (you can see one here `client/app/components/seed-help/_seed-help.scss`).  
-**note:** no need to write browser prefixes like `-webkit`, `-moz` or `-ms` it will added automatically by `gulp-autoprefixer` for 2 laters versions of all major browsers (you can change this option in `gulpfile.js` - task `buildSass`).  
+**note:** no need to write browser prefixes like `-webkit`, `-moz` or `-ms` it will be added automatically by `gulp-autoprefixer` for 2 latest versions of all major browsers (you can change this option in `gulpfile.js` - task `buildSass`).  
 ####3) How can I install extension
 To add an extension to your app you must install it either from `npm` or `bower`, then you just require it from `clinet/vendor.js`. 
 If this extension has its own styles you can just `@import` it from vendor.scss  
