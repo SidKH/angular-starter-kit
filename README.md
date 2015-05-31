@@ -9,7 +9,7 @@ It is a seed project for AngularJS web application which objects is:
 
 1) Create a new folder for your project, and clone this repo inside it
 ```
-git clone https://github.com/SidKH/angular-starter-kit.git ./
+git clone --depth=1 https://github.com/SidKH/angular-starter-kit.git ./
 ```
 2) Install all npm and bower dependencies
 ```
