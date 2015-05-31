@@ -79,22 +79,22 @@ routes.js     // Server routes
 server.js     // Main server file which create and setup express application
 ```
 ## Usage
-**1) How do I start creating my own app**
+####1) How do I start creating my own app  
 Just see angular folder structure comments and look at the existing components and shared modules.  
 It'll give you the picture of overall application structure.  
-So basically: you have main angular file `client/app.modules.js`. It contains your main app which requires `components` and `shared` modules. Components modules contains all single components of your application (like pages for example or single use directives), and shared module contains all elements of your app which will be shared across different parts of your application (like header, footer, or any reusable elements).
+So basically: you have main angular file `client/app.modules.js`. It contains your main app which requires `components` and `shared` modules. Components modules contains all single components of your application (like pages for example or single use directives), and shared module contains all elements of your app which will be shared across different parts of your application (like header, footer, or any reusable elements).  
 The main point here is using modular structure so later you can just delete the folder with your module and it's gone from your app completely (with all its directives, services, styles and views). So yes, you must put all files related to the module in its own folder, even the scss.  
-**2) How can I style my app**
+####2) How can I style my app  
 For styling you must use scss. The main entry for all your styles is `client/main.scss`, you can include in it all partials scss from your application. You must have two kinds of partial scss files.  
 First from `client/styles` folder - it'll contain scss partials with global styles for your app (settings, variables, mixins, forms, buttons, etc.).  
-And the second one - module partials: partials from different modules of your application (you can see one here `client/app/components/seed-help/_seed-help.scss`).
-**note:** no need to write browser prefixes like `-webkit`, `-moz` or `-ms` it will added automatically by `gulp-autoprefixer` for 2 laters versions of all major browsers (you can change this option in `gulpfile.js` - task `buildSass`).
-**3) How can I install extension to my app**
-To add an extension to your app you must install it either from `npm` or `bower`, then you just require it from `clinet/vendor.js`.  
+And the second one - module partials: partials from different modules of your application (you can see one here `client/app/components/seed-help/_seed-help.scss`).  
+**note:** no need to write browser prefixes like `-webkit`, `-moz` or `-ms` it will added automatically by `gulp-autoprefixer` for 2 laters versions of all major browsers (you can change this option in `gulpfile.js` - task `buildSass`).  
+####3) How can I install extension
+To add an extension to your app you must install it either from `npm` or `bower`, then you just require it from `clinet/vendor.js`. 
 If this extension has its own styles you can just `@import` it from vendor.scss  
-**note:** if you want to import `.css` file create root-relative path for it `/client/vendor/..` or `/node_modules/..`
-**4) How can I use mockup server for the app**
-When you've run `gulp` you automatically start the node server with express.  
+**note:** if you want to import `.css` file create root-relative path for it `/client/vendor/..` or `/node_modules/..`  
+####4) How can I use mockup server  
+When you've run `gulp` you automatically start the node server with express.    
 If you want to add your api route - just go to the `server/routes.js` and create one (use test route as example).  
 Add json file to the `server/data/` folder and return it body in your new route with `dataLoader`, or just return whatever you want in your route.
 
