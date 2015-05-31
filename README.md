@@ -11,20 +11,29 @@ It is a seed project for AngularJS web application which objects is:
 ```
 git clone --depth=1 https://github.com/SidKH/angular-starter-kit.git ./
 ```
-2) Install all npm and bower dependencies
+2) Add your own repository
+```
+rm -rf .git
+git init
+git remote add origin your_repository_here
+git add .
+git commit -m "Init AngularJS Starter Kit"
+git push origin master
+```
+3) Install all npm and bower dependencies
 ```
 npm install
 ```
-3) Install gulp if you don't have it already.
+4) Install gulp if you don't have it already.
 ```
 npm install --global gulp
 ```
-4) Run gulp
+5) Run gulp
 ```
 gulp
 ```
-5. Wait untill gulp do its job, then go to `http://localhost:9000`
-6. Congratulations, you've just setup your angular application!
+6) Wait untill gulp do its job, then go to `http://localhost:9000`
+7) Congratulations, you've just setup your angular application!
 
 ### Basic folder structure
 Some job for Captain Obvious
