@@ -29,7 +29,7 @@ npm install --global gulp
 ```
 gulp
 ```
-6) Wait untill gulp do its job, then go to `http://localhost:9000`
+6) Wait untill gulp do its job, ahd when you'll see the `Server listening on port 9000` line go to `http://localhost:9000`
 7) Congratulations, you've just setup your angular application!
 
 ### Basic folder structure
