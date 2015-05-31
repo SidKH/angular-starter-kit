@@ -102,6 +102,6 @@ If this extension has its own styles you can just `@import` it from vendor.scss
 ####4) How can I use mockup server  
 When you've run `gulp` you automatically start the node server with express.    
 If you want to add your api route - just go to the `server/routes.js` and create one (use test route as example).  
-Add json file to the `server/data/` folder and return it body in your new route with `dataLoader`, or just return whatever you want in your route.
+Add json file to the `server/data/` folder and send it body in your new route with `dataLoader`, or just send whatever you want in your route.
 
 
