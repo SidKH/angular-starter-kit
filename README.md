@@ -11,7 +11,7 @@ It is a seed project for AngularJS web application which objects is:
 ```
 git clone --depth=1 https://github.com/SidKH/angular-starter-kit.git ./
 ```
-2) Add your own repository
+2) Add your own repository (*optionally*)
 ```
 rm -rf .git && git init && git add . && git commit -m "Init AngularJS Starter Kit"
 git remote add origin your_repository_here
