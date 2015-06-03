@@ -17,20 +17,24 @@ rm -rf .git && git init && git add . && git commit -m "Init AngularJS Starter Ki
 git remote add origin your_repository_here
 git push origin master
 ```
-3) Install all npm and bower dependencies
+3) Install bower if you don't have it already
+```
+npm install --global bower
+```
+4) Install all npm and bower dependencies
 ```
 npm install
 ```
-4) Install gulp if you don't have it already.
+5) Install gulp if you don't have it already.
 ```
 npm install --global gulp
 ```
-5) Run gulp
+6) Run gulp
 ```
 gulp
 ```
-6) Wait untill gulp do its job, ahd when you'll see the `Server listening on port 9000` line go to `http://localhost:9000`  
-7) Congratulations, you've just setup your angular application!
+7) Wait untill gulp do its job, ahd when you'll see the `Server listening on port 9000` line go to `http://localhost:9000`  
+8) Congratulations, you've just setup your angular application!
 
 ### Basic folder structure
 Some job for Captain Obvious
