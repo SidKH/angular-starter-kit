@@ -1,4 +1,4 @@
-# AngularJS starter kit (Gulp, Browserify, SASS).
+# AngularJS starter kit (Gulp, Browserify, Sass).
 It is a seed project for AngularJS web application which objects is:
 - Organize all assets with gulp browserify and sass;
 - Provide easy to use extensibility with npm or bower package managers;
