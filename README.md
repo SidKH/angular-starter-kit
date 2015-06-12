@@ -42,7 +42,7 @@ gulp
 Some job for Captain Obvious
 ```
 client/           // Cleint side files
-node_modules/     // Node dependencies
+node_modules/     // Node Modules
 server/           // Server side files
 gulpfile.js       // File with all gulp commands
 index.html        // Basic page for angular project
