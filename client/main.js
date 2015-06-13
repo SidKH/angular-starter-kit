@@ -1,2 +1,6 @@
-/*global window*/
-var App = require('./app/app.modules.js');
+(function () {
+  'use strict';
+
+  require('./app/app.modules.js');
+
+}());

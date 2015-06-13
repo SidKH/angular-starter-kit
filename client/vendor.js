@@ -1,4 +1,8 @@
-/*global window*/
-require('angular');
-require('angular-route');
-require('angular-resource');
+(function () {
+  'use strict';
+
+  require('angular');
+  require('angular-route');
+  require('angular-resource');
+
+}());
