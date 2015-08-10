@@ -37,7 +37,6 @@
     return {
       templateUrl: Config.rootPath + 'shared/navigation/navigation-view.html',
       link: link,
-      sope: {},
       replace: true
     };
   }];
