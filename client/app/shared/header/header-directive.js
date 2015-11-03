@@ -1,20 +1,21 @@
 (function () {
   'use strict';
 
-  module.exports = ['Config', function (Config) {
+  angular.module('App.shared.header')
+    .directive('appHeader', ['Config', function (Config) {
 
-    function link(scope) {
-      scope.navLinks = [
-        {title: 'Home', href: 'home'},
-        {title: 'Help', href: 'seed-help'}
-      ];
-    }
+      function link(scope) {
+        scope.navLinks = [
+          {title: 'Home', href: 'home'},
+          {title: 'Help', href: 'seed-help'}
+        ];
+      }
 
-    return {
-      templateUrl: Config.rootPath + 'shared/header/header-view.html',
-      link: link,
-      replace: true
-    };
-  }];
+      return {
+        templateUrl: Config.rootPath + 'shared/header/header-view.html',
+        link: link,
+        replace: true
+      };
+    }]);
 
 }());

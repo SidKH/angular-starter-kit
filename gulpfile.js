@@ -4,6 +4,7 @@
   var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
+    concat = require('gulp-concat'),
     //debug = require('gulp-debug'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
@@ -12,26 +13,24 @@
     browserify = require('browserify'),
     debowerify = require("debowerify"),
     nodemon = require('gulp-nodemon'),
-    gutil = require('gulp-util'),
-    notifier = require("node-notifier");
+    notifier = require("node-notifier"),
+    gutil = require('gulp-util');
 
   /**
-   * Build application (browserify and uglify)
+   * Build application (concat and uglify)
    */
   gulp.task('buildApp', function () {
-    var app = browserify('./client/main.js', {
-      debug: true
-    });
-    app.bundle()
-      .on('error', function (err) {
-        gutil.log(gutil.colors.bgRed("Browserify error (App)"), gutil.colors.bgBlue(err.message));
-        notifier.notify({title: "Browserify error (App)", message: err.message });
-        this.emit("end");
-      })
-      .pipe(source('app.js'))
-      .pipe(buffer())
+    gulp.src([
+      './client/app/components/*/**/module.js/',
+      './client/app/shared/*/**/module.js/',
+      './client/app/components/module.js/',
+      './client/app/shared/module.js/',
+      './client/app/app.modules.js',
+      './client/app/**/*.js'
+    ])
       .pipe(sourcemaps.init({loadMaps: true}))
-      .pipe(uglify())
+      .pipe(concat('app.js'))
+      //.pipe(uglify().on('error', gutil.log))
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./client/build/'));
   });

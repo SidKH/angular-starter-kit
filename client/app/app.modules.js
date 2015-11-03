@@ -1,13 +1,11 @@
 (function () {
   'use strict';
 
-  angular.module('app', [
+  angular.module('App', [
     'ngRoute',
     'ngResource',
-    require('./components').name,
-    require('./shared').name
-  ])
-    .config(require('./app.routes'))
-    .service('Query', require('./app.queries'));
+    'App.components',
+    'App.shared'
+  ]);
 
 }());
