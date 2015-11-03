@@ -15,7 +15,20 @@
     nodemon = require('gulp-nodemon'),
     notifier = require("node-notifier"),
     gutil = require('gulp-util'),
-    ngAnnotate = require('gulp-ng-annotate');
+    ngAnnotate = require('gulp-ng-annotate'),
+    templateCache = require('gulp-angular-templatecache');
+
+  /**
+   *  Caching templates
+   */
+  gulp.task('templateCache', function () {
+    gulp.src('client/**/*.html')
+      .pipe(templateCache({
+        standalone: true,
+        root: 'client/'
+      }))
+      .pipe(gulp.dest('client/app'));
+  });
 
   /**
    * Build application (concat and uglify)
@@ -89,6 +102,7 @@
    */
   gulp.task('watch', function () {
     gulp.watch(['./client/main.js', './client/app/**/*.js'], ['buildApp']);
+    gulp.watch(['./client/app/**/*.html'], ['templateCache', 'buildApp']);
     gulp.watch('./client/vendor.js', ['buildAppVendor']);
     gulp.watch(['./client/main.scss', './client/styles/*.scss', './client/app/**/*.scss'], ['buildSass']);
     gulp.watch('./client/vendor.scss', ['buildSassVendor']);
@@ -106,6 +120,6 @@
   });
 
   // Default Gulp Task
-  gulp.task('default', ['buildApp', 'buildAppVendor', 'buildSass', 'buildSassVendor', 'startServer', 'watch']);
+  gulp.task('default', ['templateCache', 'buildApp', 'buildAppVendor', 'buildSass', 'buildSassVendor', 'startServer', 'watch']);
 
 }());
