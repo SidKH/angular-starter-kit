@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('App')
-    .config(['$routeProvider', 'Config', function ($routeProvider, Config) {
+    .config(function ($routeProvider, Config) {
       $routeProvider
         .when('/home', {
           templateUrl: Config.rootPath + 'components/home/home-view.html',
@@ -15,6 +15,6 @@
         .otherwise({
           redirectTo: '/home'
         });
-    }]);
+    });
 
 }());
