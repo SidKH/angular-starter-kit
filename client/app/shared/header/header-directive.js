@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('App.shared.header')
-    .directive('appHeader', ['Config', function (Config) {
+    .directive('appHeader', function (Config) {
 
       function link(scope) {
         scope.navLinks = [
@@ -16,6 +16,6 @@
         link: link,
         replace: true
       };
-    }]);
+    });
 
 }());

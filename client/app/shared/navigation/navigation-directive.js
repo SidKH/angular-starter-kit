@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('App.shared.navigation')
-    .directive('navLink', ['Config', '$location', function (Config, $location) {
+    .directive('navLink', function (Config, $location) {
 
       function link(scope) {
 
@@ -40,6 +40,6 @@
         link: link,
         replace: true
       };
-    }]);
+    });
 
 }());

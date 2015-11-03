@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('App.components.home')
-	  .controller('home', ['$scope', function ($scope) {
+	  .controller('home', function ($scope) {
 	    $scope.text = 'Lorem ipsum';
-	  }]);
+	  });
 
 }());

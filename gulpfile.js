@@ -14,23 +14,23 @@
     debowerify = require("debowerify"),
     nodemon = require('gulp-nodemon'),
     notifier = require("node-notifier"),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    ngAnnotate = require('gulp-ng-annotate');
 
   /**
    * Build application (concat and uglify)
    */
   gulp.task('buildApp', function () {
     gulp.src([
-      './client/app/components/*/**/module.js/',
-      './client/app/shared/*/**/module.js/',
-      './client/app/components/module.js/',
-      './client/app/shared/module.js/',
+      './client/app/components/modules.js/',
+      './client/app/shared/modules.js/',
       './client/app/app.modules.js',
       './client/app/**/*.js'
     ])
       .pipe(sourcemaps.init({loadMaps: true}))
       .pipe(concat('app.js'))
-      //.pipe(uglify().on('error', gutil.log))
+      .pipe(ngAnnotate())
+      .pipe(uglify().on('error', gutil.log))
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./client/build/'));
   });
