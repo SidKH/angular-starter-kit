@@ -68,14 +68,12 @@ app/
     home/                     // Folder with single component
       home-controller.js        // Controller for component
       home-view.html            // View for component
-      index.js                  // Component module which contains all component parts (controller, directives, services, etc..)
-    index.js                  // Angular module which contains all components modules
+    modules.js                  // Describe all components modules here
   shared/                   // Angular components shared through application (like header, sidebar, etc..)
     header/                   // Folder for shared module
       header-directive.js       // Directive for shared module
       header-view.html          // View for shared module
-      index.js                  // Angular module which contains all shared modules
-    index.js                  // Angular module which contains all shared modules
+    modules.js                  // Describe all shared modules here
   app.modules.js            // Basic angular application settings
   app.routes.js             // Angular routing
   app.queries.js            // Angular service which contains all $resource objects of the application
