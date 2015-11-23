@@ -27,13 +27,15 @@
         standalone: true,
         root: 'client/'
       }))
-      .pipe(gulp.dest('client/app', cb));
+      .pipe(gulp.dest('client/app'))
+      .on('end', cb);
   });
 
   /**
    * Build application (concat and uglify)
    */
   gulp.task('buildApp', ['templateCache'], function () {
+    console.log('ololo');
     gulp.src([
       './client/app/components/modules.js/',
       './client/app/shared/modules.js/',
@@ -102,7 +104,7 @@
    */
   gulp.task('watch', function () {
     gulp.watch(['./client/main.js', './client/app/**/*.js'], ['buildApp']);
-    gulp.watch(['./client/app/**/*.html'], ['templateCache', 'buildApp']);
+    gulp.watch(['./client/app/**/*.html'], ['buildApp']);
     gulp.watch('./client/vendor.js', ['buildAppVendor']);
     gulp.watch(['./client/main.scss', './client/styles/*.scss', './client/app/**/*.scss'], ['buildSass']);
     gulp.watch('./client/vendor.scss', ['buildSassVendor']);
@@ -120,6 +122,6 @@
   });
 
   // Default Gulp Task
-  gulp.task('default', ['templateCache', 'buildApp', 'buildAppVendor', 'buildSass', 'buildSassVendor', 'startServer', 'watch']);
+  gulp.task('default', ['buildApp', 'buildAppVendor', 'buildSass', 'buildSassVendor', 'startServer', 'watch']);
 
 }());
