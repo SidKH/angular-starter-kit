@@ -21,19 +21,19 @@
   /**
    *  Caching templates
    */
-  gulp.task('templateCache', function () {
+  gulp.task('templateCache', function (cb) {
     gulp.src('client/**/*.html')
       .pipe(templateCache({
         standalone: true,
         root: 'client/'
       }))
-      .pipe(gulp.dest('client/app'));
+      .pipe(gulp.dest('client/app', cb));
   });
 
   /**
    * Build application (concat and uglify)
    */
-  gulp.task('buildApp', function () {
+  gulp.task('buildApp', ['templateCache'], function () {
     gulp.src([
       './client/app/components/modules.js/',
       './client/app/shared/modules.js/',
